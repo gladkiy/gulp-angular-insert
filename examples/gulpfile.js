@@ -7,10 +7,4 @@ gulp.task('angular-insert', function(){
   .pipe(gulp.dest('build'));
 });
 
-// gulp.task('angular-insert', function(){
-//   gulp.src('Scripts/app/**/*component.ts')
-//   .pipe(angularInsert())
-//   .pipe(gulp.dest('build'));
-// });
-
 gulp.task('default', ['angular-insert']);
