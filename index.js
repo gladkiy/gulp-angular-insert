@@ -16,7 +16,7 @@ function replaceContent(fileContent) {
         .replace(/\s{2,}/gm, " ")
         .replace(/\'/gm, "\\\'")
         .replace(/\"/gm, "\\\"")
-        .replace(/\$(\d+)/gm, "&dollar;$1")
+        .replace(/\$(\d+)/gm, "&#x0024;$1")
         .trim();
     return fileContent;
 }
