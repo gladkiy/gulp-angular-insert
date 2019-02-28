@@ -15,7 +15,8 @@ function replaceContent(fileContent) {
         .replace(/(\r\n|\n|\r)/gm, "")
         .replace(/\s{2,}/gm, " ")
         .replace(/\'/gm, "\\\'")
-        .replace(/\"/gm, "\\\"");
+        .replace(/\"/gm, "\\\"")
+        .trim();
     return fileContent;
 }
 
@@ -98,11 +99,11 @@ var gulpAngularInsert = function () {
             var fileContent = file.contents.toString();
 
             // get htmlTemplate to insert it into the angular component file
-            var htmlTemplateContent = getHtmlTemplateContent(file, fileContent)
+            var htmlTemplateContent = getHtmlTemplateContent(file, fileContent);
             fileContent = fileContent.replace(TEMPLATE_URL_PATTERN, "template: '" + htmlTemplateContent + "'");
                 
             // get styles to insert it into the angular component file
-            var stylesContent = getStyleSheetsContent(file, fileContent)
+            var stylesContent = getStyleSheetsContent(file, fileContent);
             fileContent = fileContent.replace(STYLE_URL_PATTERN, "styles: ['" + stylesContent + "']");
 
             var outBuffer = new Buffer.from(fileContent);
