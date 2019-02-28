@@ -1,6 +1,6 @@
 {
   "name": "gulp-angular-insert",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Insert external HTML templates and CSS styles in Angular components",
   "main": "index.js",
   "repository": {
