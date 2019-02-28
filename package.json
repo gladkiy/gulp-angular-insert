@@ -1,0 +1,29 @@
+{
+  "name": "gulp-angular-insert",
+  "version": "1.0.0",
+  "description": "Insert external HTML templates and CSS styles in Angular components",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gladkiy/gulp-angular-insert.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "angular",
+    "angular-insert"
+  ],
+  "author": "Alexander Gladkiy",
+  "license": "MIT",
+  "dependencies": {
+    "plugin-error": "^1.0.1",
+    "through2": "^2.0.0",
+    "vinyl": "^2.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
