@@ -40,13 +40,6 @@ function getStyleSheetsContent(file, fileContent) {
         for (var i = 0; i < styleUrls.length; i++) {
             styleUrls[i] = replaceUrl(styleUrls[i]);
 
-            //if absolute path
-            var beginPath = './app/';
-            if (styleUrls[i].startsWith(beginPath)) {
-                styleUrls[i] = styleUrls[i].substr(beginPath.length);
-                filePath = file.base;
-            }
-
             // Get content of the css file
             stylesContent += fs.readFileSync(filePath + "/" + styleUrls[i]);
         }
@@ -67,13 +60,6 @@ function getHtmlTemplateContent(file, fileContent) {
     if (templateUrlMatch) {
         var templateUrl = templateUrlMatch.toString().match(STRING_PATTERN);
         templateUrl[0] = replaceUrl(templateUrl[0]);
-
-        //if absolute path
-        var beginPath = './app/';
-        if (templateUrl[0].startsWith(beginPath)) {
-            templateUrl[0] = templateUrl[0].substr(beginPath.length);
-            filePath = file.base;
-        }
 
         // Get content of the html template file
         htmlTemplateContent += fs.readFileSync(filePath + "/" + templateUrl[0]);
